@@ -1,5 +1,7 @@
 #include<stdio.h> 
+
 int notExit=1; 
+
 void lSearch(int n, int ar[]) { 
 int search_key; 
 while(notExit == 1) { 
@@ -15,7 +17,10 @@ break;
 } 
 if(flag == 0) { 
 printf("The element %d not found in search!\n",search_key); 
-} }} 
+} 
+}
+} 
+
 void main() { 
 int limit, ar[150]; 
 printf("Enter the array limit: "); 
