@@ -1,3 +1,3 @@
 # C-Programs
 
-Simple C Programs for beginners.
+Simple C Programs for students under KTU.
