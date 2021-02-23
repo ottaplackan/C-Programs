@@ -1,8 +1,10 @@
 #include<stdio.h>
 #include<stdlib.h>
 #define MAX 5
+
 int top=-1;
 int stack[MAX];
+
 void push() {
     int no;
 	if(top==MAX-1) {
@@ -15,6 +17,7 @@ void push() {
 		stack[top]=no;
 	}
 }
+
 void pop() {
     	if(top==-1) {
 		printf("Underflow Condition.\n");
@@ -24,6 +27,7 @@ void pop() {
 		top--;
 	}
 }
+
 void display() {
       for(int i=top;i>=0;i--) {  
         printf("\n%d",stack[i]);  
@@ -32,6 +36,7 @@ void display() {
         printf("Stack is empty.");  
     }  
 }
+
 void main() {
     int ch;
     int item;
