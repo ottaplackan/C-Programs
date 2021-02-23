@@ -1,15 +1,19 @@
 #include<stdio.h> 
+
 struct node { 
 int data; 
 struct node *addr; 
 }; 
+
 struct node *top = NULL; 
+
 struct node *createnode(int item) { 
 struct node *nn; 
 nn = (struct node*)malloc(sizeof(struct node)); 
 nn->data = item; 
 return nn; 
 } 
+
 void push(struct node *nn, int item) { 
 nn = createnode(item); 
 if(top == NULL) { 
@@ -20,6 +24,7 @@ nn->addr = top;
 top = nn; 
 } 
 } 
+
 void pop() { 
 if(top == NULL) { 
 printf("\nStack is Empty!"); 
@@ -29,6 +34,7 @@ p=p->addr;
 top=p; 
 } 
 } 
+
 int check_bracket(char expression[]) { 
 struct node *nn; 
 int length = strlen(expression); 
@@ -40,7 +46,8 @@ if(expression[i] == ')') {
 if(top == NULL) { 
 printf("\nThe no. of ) is more than ("); 
 return 0; 
-} else { 
+} 
+else { 
 pop(); 
 } 
 } 
@@ -51,6 +58,7 @@ return 1;
 return 0; 
 } 
 } 
+
 void main() { 
 char expression[100]; 
 int check; 
