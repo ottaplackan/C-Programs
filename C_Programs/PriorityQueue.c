@@ -1,8 +1,10 @@
 #include<stdio.h> 
+
 int queue[5]; 
 int rear=-1; 
 int front=-1; 
 int notExit = 1; 
+
 void enqueue() { 
 int item;
 printf("Enter the number to insert: "); 
@@ -25,6 +27,7 @@ rear++;
 } 
 return; 
 } 
+
 void dequeue() { 
 if(front==-1 && rear==-1) { 
 printf("Queue is empty!"); 
@@ -40,6 +43,7 @@ printf("%d is deleted from queue",item);
 rear--; 
 } 
 } 
+
 void display_queue() { 
 if(front==-1 && rear==-1) { 
 printf("Queue is empty!"); 
@@ -52,6 +56,7 @@ printf("%d\t",queue[i]);
 printf("\n"); 
 } 
 } 
+
 void main() { 
 while(notExit == 1) { 
 int opt; 
