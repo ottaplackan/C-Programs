@@ -1,8 +1,10 @@
 #include<stdio.h> 
+
 int queue[5]; 
 int front = -1; 
 int rear = -1; 
 int notExit = 1; 
+
 void enqueue(int item) { 
 if(rear == 4) { 
 printf("\nQueue Overflow\n"); 
@@ -14,7 +16,9 @@ queue[rear] = item;
 else { 
 rear++; 
 queue[rear] = item; 
-}} 
+}
+} 
+
 void dequeue() { 
 if(front == -1 && rear == -1) { 
 printf("Queue is Empty\n"); 
@@ -28,6 +32,7 @@ printf("Deleted item is: %d\n",queue[front]);
 front++; 
 } 
 } 
+
 void display() { 
 if(front == -1 && rear == -1) { 
 printf("Queue is Empty\n"); 
@@ -38,6 +43,7 @@ printf("%d\t", queue[i]);
 } 
 } 
 } 
+
 void main() { 
 while(notExit == 1) { 
 int opt, item; 
