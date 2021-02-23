@@ -5,6 +5,7 @@ struct node {
 int data; 
 struct node *addr; 
 }; 
+
 struct node *a[30]; 
 int queue[50], front=-1, rear=-1; 
 int visited[30]={0}; 
@@ -14,6 +15,7 @@ nn = (struct node*)malloc(sizeof(struct node));
 nn->data = item; 
 return nn; 
 } 
+
 void enqueue(int item) { 
 if(rear == 49) { 
 printf("\nQueue Overflow\n"); 
@@ -27,6 +29,7 @@ rear++;
 queue[rear] = item; 
 } 
 } 
+
 int dequeue() { 
 int item; 
 if(front == -1 && rear == -1) { 
@@ -42,6 +45,7 @@ item = queue[front];
 } 
 return item; 
 } 
+
 void depth_first_search() { 
 int element; 
 struct node *s; 
@@ -62,6 +66,7 @@ s = s->addr;
 } 
 } 
 } 
+
 void create_list(int nodes) { 
 int n, data; 
 struct node *h; 
@@ -82,6 +87,7 @@ h=h->addr;
 printf("\nDepth First Search: "); 
 depth_first_search(); 
 } 
+
 void main() { 
 int n; 
 printf("Enter the number of nodes: "); 
