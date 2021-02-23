@@ -1,11 +1,14 @@
 #include<stdio.h> 
+
 int rear=-1, front=-1; 
 int queue[5]; 
 int notExit = 1; 
+
 void enqueue_rear() { 
 if(rear == 4) { 
 printf("Element can't be inserted through rear end!\n"); 
-} else { 
+} 
+else { 
 int item; 
 printf("Enter the item to insert: "); 
 scanf("%d",&item); 
@@ -15,10 +18,12 @@ front=0;
 queue[rear+=1] = item; 
 } 
 } 
+
 void enqueue_front() { 
 if(front < 1) { 
 printf("Element can't be inserted through front end!\n"); 
-} else { 
+} 
+else { 
 int item; 
 printf("Enter the item to insert: "); 
 scanf("%d",&item); 
@@ -26,32 +31,39 @@ front--;
 queue[front] = item; 
 } 
 } 
+
 void dequeue_rear() { 
 if(front == -1) { 
 printf("Queue underflow!\n"); 
-} else { 
+} 
+else { 
 int item = queue[rear]; 
 printf("The element %d is deleted from queue\n",item); 
 if(front == rear) { 
 front=rear = -1; 
-} else { 
+} 
+else { 
 rear--; 
 } 
 } 
 } 
+
 void dequeue_front() { 
 if(front == -1) { 
 printf("Queue underflow!\n"); 
-} else { 
+} 
+else { 
 int item = queue[front]; 
 printf("The element %d is deleted from queue\n",item); 
 if(front == rear) { 
 front=rear = -1; 
-} else { 
+} 
+else { 
 front++; 
 } 
 } 
 } 
+
 void display_queue() { 
 if(front != -1) { 
 printf("\nQueue is:\t"); 
@@ -59,10 +71,12 @@ for(int i=front;i<=rear;i++) {
 printf("%d\t",queue[i]); 
 } 
 printf("\n"); 
-} else { 
+} 
+else { 
 printf("\nQueue is empty!\n"); 
 } 
 } 
+
 void main() { 
 while(notExit == 1) { 
 int opt; 
