@@ -1,4 +1,5 @@
 #include<stdio.h> 
+
 void bubble_sort(int ar[], int n) { 
 int temp; 
 for(int i=0;i<n;i++ ) { 
@@ -15,6 +16,7 @@ printf("%d ",ar[k]);
 printf("\n"); 
 } 
 } 
+
 void main() { 
 int ar[20],n; 
 printf("Enter the number of items in the array: "); 
