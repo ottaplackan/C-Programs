@@ -1,17 +1,21 @@
 #include<stdio.h> 
 #include<stdlib.h> 
+
 struct node { 
 int data; 
 struct node *addr; 
 }; 
+
 struct node *a[30]; 
 int stack[50], top=-1, visited[30]={0}; 
+
 struct node *create_node(int item) { 
 struct node *nn; 
 nn = (struct node*)malloc(sizeof(struct node)); 
 nn->data = item; 
 return nn; 
 } 
+
 void push(int item) { 
 if(top >= 49) { 
 printf("Stack overflow!"); 
@@ -19,6 +23,7 @@ printf("Stack overflow!");
 stack[++top] = item; 
 } 
 } 
+
 int pop() { 
 int item; 
 if(top == -1) { 
@@ -27,7 +32,9 @@ printf("Stack underflow!");
 item = stack[top]; 
 top--; 
 } 
-return item;} 
+return item;
+} 
+
 void depth_first_search() { 
 int element; 
 struct node *s; 
@@ -44,7 +51,11 @@ if(visited[s->data] == 0) {
 push(s->data); 
 } 
 s = s->addr; 
-} } }} 
+} 
+} 
+}
+} 
+
 void adj_list(int nodes) { 
 int n, data; 
 struct node *h; 
@@ -60,9 +71,12 @@ printf("Enter the elements: ");
 scanf("%d",&data); 
 h->addr = create_node(data); 
 h=h->addr; 
-} } 
+} 
+} 
 printf("\nDepth First Search: "); 
-depth_first_search();} 
+depth_first_search();
+} 
+
 void main() { 
 int n; 
 printf("Enter the number of nodes: "); 
