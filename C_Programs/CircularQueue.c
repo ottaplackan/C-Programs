@@ -1,8 +1,10 @@
 #include<stdio.h> 
+
 int queue[5]; 
 int front = -1; 
 int rear = -1; 
 int notExit = 1; 
+
 void enqueue(int item) { 
 if(front == -1 && rear == -1) { 
 front = rear = 0; 
@@ -16,6 +18,7 @@ rear = (rear+1)%5;
 queue[rear] = item; 
 } 
 } 
+
 void dequeue() { 
 if(front == -1 && rear == -1) { 
 printf("\nQueue is Empty\n"); 
@@ -28,6 +31,7 @@ printf("\nDeleted item is: %d\n",queue[front]);
 front = (front+1)%5; 
 } 
 } 
+
 void display() { 
 int i = front; 
 if(front == -1 && rear == -1) { 
@@ -42,6 +46,7 @@ i = (i+1)%5;
 printf("%d",queue[rear]); 
 } 
 } 
+
 void main() { 
 while(notExit == 1) { 
 int opt, item; 
@@ -67,4 +72,5 @@ break;
 default: 
 printf("Enter valid operator"); 
 } 
-}} 
+}
+} 
