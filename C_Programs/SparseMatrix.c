@@ -1,10 +1,13 @@
 #include<stdio.h> 
+
 struct sparse { 
 int row; 
 int column; 
 int value; 
 }; 
+
 struct sparse s[20]; 
+
 void sparse_matrix( int rows,int col,int ar[rows][col]) { 
 int count=0, k=1;; 
 for(int i=0;i<rows;i++) { 
@@ -27,6 +30,7 @@ for(int i=1;i<k;i++) {
 printf("%d\t %d\t %d\n",s[i].row, s[i].column, s[i].value); 
 } 
 } 
+
 void main() { 
 int row, column; 
 printf("Enter the no. of rows of the matrix: "); 
