@@ -1,6 +1,6 @@
 #include<stdio.h> 
-void main() 
-{ 
+
+void main() { 
 int c, first, last, middle, n, search, array[100]; 
 printf("Enter number of elements: "); 
 scanf("%d",&n); 
@@ -12,12 +12,10 @@ scanf("%d", &search);
 first = 0; 
 last = n - 1; 
 middle = (first+last)/2; 
-while (first <= last) 
-{ 
+while (first <= last) { 
 if (array[middle] < search) 
 first = middle + 1; 
-else if (array[middle] == search) 
-{ 
+else if (array[middle] == search) { 
 printf("%d found at location %d.\n", search, middle+1); 
 break; 
 } 
