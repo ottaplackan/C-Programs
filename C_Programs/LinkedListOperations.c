@@ -1,9 +1,11 @@
 #include<stdio.h> 
 #include<stdlib.h> 
+
 struct node { 
 int data; 
 struct node *addr; 
 }; 
+
 struct node *head = NULL; 
 int notExit = 1; 
 struct node *createnode(int item); 
@@ -15,12 +17,14 @@ void delete_beg();
 void delete_end(); 
 void delete_pos(); 
 void display_list(); 
+
 struct node *createnode(int item) { 
 struct node *nn; 
 nn = (struct node*)malloc(sizeof(struct node)); 
 nn->data = item; 
 return nn; 
 } 
+
 int node_count() { 
 int count = 0; 
 struct node *temp = head; 
@@ -30,6 +34,7 @@ temp=temp->addr;
 } 
 return count; 
 } 
+
 void insert_beg() { 
 int item; 
 struct node *nn; 
@@ -46,6 +51,7 @@ head = nn;
 } 
 display_list(); 
 } 
+
 void insert_end() { 
 int item; 
 struct node *nn; 
@@ -55,7 +61,8 @@ nn = createnode(item);
 if(head == NULL) { 
 nn->addr = NULL; 
 head = nn; 
-} else { 
+} 
+else { 
 struct node *p = head; 
 while(p->addr != NULL) { 
 p=p->addr; 
@@ -65,6 +72,7 @@ nn->addr = NULL;
 } 
 display_list(); 
 } 
+
 void insert_pos() { 
 int item, pos, count; 
 printf("Enter the position to which element is to be inserted: "); 
@@ -72,7 +80,8 @@ scanf("%d",&pos);
 count = node_count(); 
 if(pos > count) { 
 printf("Enter a valid position!\n"); 
-} else { 
+} 
+else { 
 printf("\nEnter the element: "); 
 scanf("%d",&item); 
 struct node *nn; 
@@ -80,7 +89,8 @@ nn = createnode(item);
 if(head == NULL) { 
 nn->addr = NULL; 
 head = nn; 
-} else { 
+} 
+else { 
 struct node *p = head; 
 for(int i=1;i<pos-1;i++) { 
 p=p->addr; 
@@ -91,20 +101,24 @@ p->addr = nn;
 display_list(); 
 } 
 } 
+
 void delete_beg() { 
 if(head == NULL) { 
 printf("Linked list is Empty!"); 
-} else { 
+} 
+else { 
 struct node *p = head; 
 p=p->addr; 
 head=p; 
 } 
 display_list(); 
 } 
+
 void delete_end() { 
 if(head == NULL) { 
 printf("Linked list is Empty!"); 
-} else { 
+} 
+else { 
 struct node *p=head,*c=head; 
 while(p->addr != NULL) { 
 c=p; 
@@ -114,6 +128,7 @@ c->addr=NULL;
 } 
 display_list(); 
 } 
+
 void delete_pos() { 
 int pos, count; 
 printf("Enter the position from which element is to be deleted: "); 
@@ -121,10 +136,12 @@ scanf("%d",&pos);
 count = node_count(); 
 if(pos > count) { 
 printf("Enter a valid position!\n"); 
-} else { 
+} 
+else { 
 if(head == NULL) { 
 printf("Linked list is Empty!"); 
-} else { 
+} 
+else { 
 struct node *p=head,*c=head; 
 for(int i=1;i<pos;i++) { 
 c=p; 
@@ -135,10 +152,12 @@ c->addr = p->addr;
 display_list(); 
 } 
 } 
+
 void display_list() { 
 if(head == NULL) { 
 printf("Linked list is empty!"); 
-} else { 
+} 
+else { 
 struct node *p = head; 
 printf("Linked list: "); 
 while(p->addr != NULL) { 
@@ -148,6 +167,7 @@ p=p->addr;
 printf("%d\n",p->data); 
 } 
 } 
+
 void main() { 
 int opt; 
 while(notExit == 1) { 
