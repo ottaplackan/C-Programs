@@ -1,21 +1,25 @@
 #include<stdio.h> 
 #include<stdlib.h> 
+
 struct node { 
 int data; 
 struct node *addr; 
 }; 
+
 struct node *top = NULL; 
 int notExit = 1; 
 struct node *createnode(int item); 
 void push(struct node *nn); 
 void display(); 
 void pop(); 
+
 struct node *createnode(int item) { 
 struct node *nn; 
 nn = (struct node*)malloc(sizeof(struct node)); 
 nn->data = item; 
 return nn; 
 } 
+
 void push(struct node *nn) { 
 int item; 
 printf("Enter the element: "); 
@@ -24,16 +28,19 @@ nn = createnode(item);
 if(top == NULL) { 
 nn->addr = NULL; 
 top = nn; 
-} else { 
+} 
+else { 
 nn->addr = top; 
 top = nn; 
 } 
 display(); 
 } 
+
 void pop() { 
 if(top == NULL) { 
 printf("\nStack is Empty!"); 
-} else { 
+} 
+else { 
 struct node *p=top; 
 printf("\n%d is deleted!",p->data); 
 p=p->addr; 
@@ -41,10 +48,12 @@ top=p;
 display(); 
 } 
 }
+
 void display() { 
 if(top == NULL) { 
 printf("\nStack is Empty!\n"); 
-} else { 
+} 
+else { 
 struct node *p=top; 
 printf("\nStack: "); 
 while(p->addr != NULL) { 
@@ -54,6 +63,7 @@ p=p->addr;
 printf("%d\n",p->data); 
 } 
 } 
+
 void main() { 
 int opt; 
 struct node *nn; 
